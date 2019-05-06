@@ -68,12 +68,12 @@ data1 = [go.Choropleth(
             width = 2
         )),
     colorbar = go.choropleth.ColorBar(
-        title = "Millions USD")
+        title = "No of Complaints")
 )]
 
 layout = go.Layout(
     title = go.layout.Title(
-        text = '2011 US Agriculture Exports by State<br>(Hover for breakdown)'
+        text = 'Consumer Complaints by State<br>(Hover for breakdown)'
     ),
     geo = go.layout.Geo(
         scope = 'usa',

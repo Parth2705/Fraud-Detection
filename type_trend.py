@@ -27,9 +27,9 @@ def getGraph(type1):
         data.append(dict(
             type='scatter3d',
             mode='lines',
-            x=amount + amount[::-1] + [amount[0]],  # year loop: in incr. order then in decr. order then years[0]
+            z=amount + amount[::-1] + [amount[0]],  # year loop: in incr. order then in decr. order then years[0]
             y=amount_cord * 2 + [amount_cord[0]],
-            z=isFraud + zeros + [isFraud[0]],
+            x=isFraud + zeros + [isFraud[0]],
             name='',
             surfaceaxis=1,  # add a surface axis ('1' refers to axes[1] i.e. the y-axis)
             surfacecolor=fill_color,
@@ -39,7 +39,7 @@ def getGraph(type1):
             ),
         ))
     layout = dict(
-        title='Population from 1957 to 2007 [Gapminder]',
+        title='Fraud according to Transaction Type',
         showlegend=False,
         scene=dict(
             xaxis=dict(title=''),
