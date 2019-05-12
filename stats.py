@@ -71,7 +71,7 @@ trace_Merch= go.Bar(
     y=[dfMerchPay['type'].count(),dfMerchTr['type'].count(),dfMerchCI['type'].count(),\
        dfMerchCO['type'].count(),dfMerchDB['type'].count()],
     x=['PAYMENT','TRANSFER','CASH_IN','CASH_OUT','DEBIT'],
-    name='Merchant Transactions',
+    name='Merchant Origin Transactions',
     marker=dict(
         color='rgb(5, 127, 105)'
     )
@@ -80,7 +80,7 @@ trace_Cust= go.Bar(
     y=[dfCustPay['type'].count(),dfCustTr['type'].count(),dfCustCI['type'].count(),\
        dfCustCO['type'].count(),dfCustDB['type'].count()],
     x=['PAYMENT','TRANSFER','CASH_IN','CASH_OUT','DEBIT'],
-    name='Customer Transactions',
+    name='Customer Origin Transactions',
     marker=dict(
         color='rgb(1, 68, 37)'
     )
@@ -89,7 +89,7 @@ traceD_Merch= go.Bar(
     y=[dfDestMerchPay['type'].count(),dfDestMerchTr['type'].count(),dfDestMerchCI['type'].count(),\
        dfDestMerchCO['type'].count(),dfDestMerchDB['type'].count()],
     x=['PAYMENT','TRANSFER','CASH_IN','CASH_OUT','DEBIT'],
-    name='Merchant Transactions',
+    name='Merchant Destination Transactions',
     marker=dict(
         color='rgb(5, 127, 105)'
     )
@@ -98,9 +98,9 @@ traceD_Cust= go.Bar(
     y=[dfDestCustPay['type'].count(),dfDestCustTr['type'].count(),dfDestCustCI['type'].count(),\
        dfDestCustCO['type'].count(),dfDestCustDB['type'].count()],
     x=['PAYMENT','TRANSFER','CASH_IN','CASH_OUT','DEBIT'],
-    name='Customer Transactions',
+    name='Customer Destination Transactions',
     marker=dict(
-        color='rgb(1, 68, 37)'
+        color='rgb(2, 98, 137)'
     )
 )
 trace1 = go.Bar(
@@ -199,7 +199,7 @@ layout1 = go.Layout(
     bargroupgap=0.1
 )
 fig = tools.make_subplots(rows=2, cols=2, subplot_titles=('Flagged Not Fraud', 'Flagged Fraud', 'Not Fraud', 'Fraud'))
-fig1 = tools.make_subplots(rows=2, cols=2, subplot_titles=('Merchant', 'Customer', 'Merchant', 'Customer'))
+fig1 = tools.make_subplots(rows=2, cols=2, subplot_titles=( 'Merchant Origin', 'Customer Origin','Merchant Destination', 'Customer Destination '))
 
 fig.append_trace(trace1, 1, 1)
 fig.append_trace(trace2, 1, 2)
